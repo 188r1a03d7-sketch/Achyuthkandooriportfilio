@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Achyuth Kandoori — Quality Engineer</title>
+<meta name="description" content="Quality Engineer with expertise in automotive manufacturing, APQP/PPAP, SPC, and supplier quality at a Toyota Tier-1 supplier.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--navy:#1a2744;--blue:#2563eb;--blue-light:#eff6ff;--blue-mid:#dbeafe;--text:#111827;--muted:#6b7280;--border:#e5e7eb;--bg:#f8fafc;--white:#ffffff;--green:#059669;--card:#ffffff;--nav-bg:rgba(255,255,255,0.92);--glow:rgba(37,99,235,0.12);--hero-bg:#ffffff;}
+.dark{--navy:#e2e8f0;--blue:#60a5fa;--blue-light:#1e3a5f;--blue-mid:#1e3a5f;--text:#f1f5f9;--muted:#94a3b8;--border:#1e293b;--bg:#0a0f1e;--white:#111827;--green:#34d399;--card:#111827;--nav-bg:rgba(10,15,30,0.95);--glow:rgba(96,165,250,0.15);--hero-bg:#0a0f1e;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:14px;transition:background .4s,color .4s;}
+#progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--blue),#818cf8);width:0%;z-index:999;transition:width .08s;}
+nav{background:var(--nav-bg);border-bottom:1px solid var(--border);padding:0 28px;position:sticky;top:0;z-index:200;backdrop-filter:blur(16px);transition:background .4s,border-color .4s;}
+.nav-inner{max-width:900px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px;}
+.nav-brand{display:flex;align-items:center;gap:10px;cursor:pointer;text-decoration:none;}
+.nav-monogram{width:32px;height:32px;background:var(--blue);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#fff;letter-spacing:-.5px;flex-shrink:0;}
+.nav-logo{font-weight:600;font-size:14px;color:var(--navy);transition:color .3s;}
+.nav-links{display:flex;gap:4px;align-items:center;}
+.nav-links a{text-decoration:none;font-size:12px;color:var(--muted);transition:color .2s,background .2s;padding:5px 9px;border-radius:6px;}
+.nav-links a.active{color:var(--blue);background:var(--blue-light);}
+.nav-links a:hover{color:var(--blue);}
+.dark-toggle{background:none;border:1px solid var(--border);border-radius:20px;width:36px;height:36px;cursor:pointer;font-size:15px;color:var(--text);transition:all .2s;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.dark-toggle:hover{border-color:var(--blue);background:var(--blue-light);}
+.hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:6px;border:none;background:none;}
+.hamburger span{width:20px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s;}
+.mobile-menu{display:none;position:fixed;top:56px;left:0;right:0;background:var(--nav-bg);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:12px 28px;z-index:199;flex-direction:column;gap:4px;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{text-decoration:none;font-size:13px;color:var(--muted);padding:10px 12px;border-radius:8px;transition:background .2s,color .2s;}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--blue);background:var(--blue-light);}
+.hero{padding:80px 28px 72px;position:relative;overflow:hidden;background:var(--hero-bg);transition:background .4s;}
+.hero-canvas{position:absolute;inset:0;opacity:.4;pointer-events:none;}
+.hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;}
+.hero-label-bg{position:absolute;right:-20px;top:-40px;font-size:120px;font-weight:700;color:var(--blue);opacity:.04;line-height:1;pointer-events:none;user-select:none;letter-spacing:-4px;}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--blue-light);color:var(--blue);font-size:11px;font-weight:600;padding:4px 12px;border-radius:20px;margin-bottom:20px;border:1px solid var(--blue-mid);}
+.hero-badge span{width:5px;height:5px;background:var(--blue);border-radius:50%;display:inline-block;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(.8);}}
+h1{font-size:clamp(32px,5vw,52px);font-weight:700;color:var(--navy);line-height:1.1;margin-bottom:16px;transition:color .3s;letter-spacing:-1px;}
+h1 em{font-style:normal;color:var(--blue);}
+.cursor{display:inline-block;width:3px;height:.85em;background:var(--blue);margin-left:1px;animation:blink .7s infinite;vertical-align:middle;border-radius:2px;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
+.hero-sub{font-size:14px;color:var(--muted);max-width:460px;margin-bottom:28px;line-height:1.65;}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+.btn-primary{background:var(--blue);color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;border:none;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:6px;}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 20px var(--glow);}
+.btn-secondary{border:1px solid var(--border);color:var(--navy);padding:10px 20px;border-radius:8px;font-size:13px;font-weight:500;text-decoration:none;transition:all .2s;background:none;cursor:pointer;font-family:'Inter',sans-serif;display:inline-flex;align-items:center;gap:6px;}
+.btn-secondary:hover{border-color:var(--blue);color:var(--blue);}
+.visa-pill{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--muted);padding:6px 14px;border:1px solid var(--border);border-radius:20px;}
+.visa-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s infinite;}
+.hero-photo-wrap{flex-shrink:0;}
+.hero-photo{width:180px;height:180px;border-radius:50%;object-fit:cover;object-position:center top;border:4px solid var(--blue);box-shadow:0 0 0 6px var(--blue-light),0 16px 40px var(--glow);display:block;}
+.hero-initials{width:180px;height:180px;border-radius:50%;background:var(--blue-light);border:4px solid var(--blue);display:flex;align-items:center;justify-content:center;font-size:48px;font-weight:700;color:var(--blue);box-shadow:0 0 0 6px var(--blue-light),0 16px 40px var(--glow);}
+section{padding:64px 28px;}
+.inner{max-width:900px;margin:0 auto;}
+.section-eyebrow{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:6px;}
+.section-heading-wrap{position:relative;margin-bottom:32px;}
+.section-heading-bg{position:absolute;top:-16px;left:-4px;font-size:64px;font-weight:700;color:var(--blue);opacity:.04;line-height:1;pointer-events:none;user-select:none;white-space:nowrap;}
+h2{font-size:24px;font-weight:700;color:var(--navy);position:relative;transition:color .3s;letter-spacing:-.3px;}
+.metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:14px;}
+.metric-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;cursor:pointer;transition:border-color .25s,transform .25s,box-shadow .25s,background .4s;position:relative;overflow:hidden;}
+.metric-card:hover{border-color:var(--blue);transform:translateY(-4px);box-shadow:0 12px 32px var(--glow);}
+.metric-accent{width:3px;height:28px;background:var(--blue);border-radius:2px;margin-bottom:12px;opacity:.6;}
+.metric-number{font-size:26px;font-weight:700;color:var(--navy);line-height:1;margin-bottom:8px;transition:color .3s;letter-spacing:-1px;}
+.metric-number em{font-style:normal;color:var(--blue);}
+.metric-label{font-size:12px;color:var(--muted);line-height:1.45;}
+.metric-cta{font-size:11px;color:var(--blue);margin-top:12px;font-weight:600;}
+.exp-list{display:flex;flex-direction:column;}
+.exp-item{display:grid;grid-template-columns:140px 1fr;gap:24px;padding:24px 0;border-bottom:1px solid var(--border);}
+.exp-item:last-child{border-bottom:none;}
+.exp-date{font-size:11px;color:var(--muted);padding-top:3px;font-weight:500;}
+.exp-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:2px;transition:color .3s;}
+.exp-company{font-size:12px;color:var(--blue);margin-bottom:8px;font-weight:600;}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.exp-bullets li{font-size:12px;color:var(--muted);padding-left:14px;position:relative;line-height:1.5;}
+.exp-bullets li::before{content:'';position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;background:var(--blue);opacity:.4;}
+.skills-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.skill-group-label{font-size:10px;font-weight:700;color:var(--navy);margin-bottom:10px;text-transform:uppercase;letter-spacing:.08em;transition:color .3s;}
+.skill-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.tag{font-size:11px;background:var(--bg);border:1px solid var(--border);color:var(--muted);padding:4px 10px;border-radius:6px;transition:all .2s;cursor:default;}
+.tag:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-light);}
+.cert-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;}
+.cert-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;transition:background .4s,border-color .3s;}
+.cert-card:hover{border-color:var(--blue);}
+.cert-name{font-size:12px;font-weight:600;color:var(--navy);margin-bottom:3px;transition:color .3s;}
+.cert-body{font-size:11px;color:var(--muted);}
+.cert-badge{display:inline-block;margin-top:8px;font-size:10px;padding:2px 8px;border-radius:20px;font-weight:600;}
+.badge-active{background:#ecfdf5;color:#065f46;}
+.badge-progress{background:#fffbeb;color:#92400e;}
+.dark .badge-active{background:#064e3b;color:#6ee7b7;}
+.dark .badge-progress{background:#451a03;color:#fcd34d;}
+.project-card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:14px;transition:background .4s,border-color .3s;}
+.project-card:hover{border-color:var(--blue);}
+.project-header{padding:22px 26px;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;}
+.project-meta{flex:1;}
+.project-tag{display:inline-block;background:var(--blue-light);color:var(--blue);font-size:10px;font-weight:700;padding:2px 9px;border-radius:20px;margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em;}
+.project-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px;transition:color .3s;}
+.project-desc{font-size:12px;color:var(--muted);line-height:1.5;}
+.project-btn{background:none;border:1px solid var(--border);border-radius:8px;padding:7px 16px;font-size:12px;font-weight:500;color:var(--navy);cursor:pointer;white-space:nowrap;font-family:'Inter',sans-serif;transition:all .2s;text-decoration:none;display:inline-flex;align-items:center;gap:5px;}
+.project-btn:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-light);}
+.qa-section{border-top:1px solid var(--border);display:none;}
+.qa-section.open{display:block;}
+.qa-item{border-bottom:1px solid var(--border);}
+.qa-item:last-child{border-bottom:none;}
+.qa-question{width:100%;background:none;border:none;padding:15px 26px;text-align:left;font-size:13px;font-weight:600;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:'Inter',sans-serif;transition:color .3s,background .2s;}
+.qa-question:hover{background:var(--bg);}
+.qa-chev{font-size:10px;color:var(--muted);transition:transform .25s;flex-shrink:0;}
+.qa-chev.open{transform:rotate(180deg);}
+.qa-answer{padding:4px 26px 18px;font-size:13px;color:var(--text);line-height:1.75;display:none;background:var(--bg);}
+.qa-answer.open{display:block;}
+.qa-highlight{display:inline-block;background:var(--blue-light);color:var(--blue);font-size:11px;font-weight:600;padding:3px 9px;border-radius:6px;margin-top:10px;border:1px solid var(--blue-mid);}
+.contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.contact-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 20px;transition:background .4s,border-color .3s;}
+.contact-card:hover{border-color:var(--blue);}
+.contact-type{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:5px;}
+.contact-val{font-size:13px;color:var(--navy);font-weight:500;transition:color .3s;}
+.contact-val a{color:var(--blue);text-decoration:none;font-weight:600;}
+.contact-val a:hover{text-decoration:underline;}
+.copy-btn{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:var(--blue);background:var(--blue-light);border:1px solid var(--blue-mid);border-radius:6px;padding:3px 9px;cursor:pointer;margin-top:6px;font-family:'Inter',sans-serif;font-weight:600;transition:all .2s;}
+.copy-btn:hover{background:var(--blue);color:#fff;}
+#detail-view{display:none;padding:28px;}
+.detail-inner{max-width:760px;margin:0 auto;padding:32px 0 72px;}
+.back-btn{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:600;color:var(--muted);cursor:pointer;border:1px solid var(--border);background:var(--card);padding:7px 14px;border-radius:8px;margin-bottom:32px;transition:all .2s;}
+.back-btn:hover{color:var(--blue);border-color:var(--blue);}
+.detail-metric{font-size:52px;font-weight:700;color:var(--blue);line-height:1;margin-bottom:8px;letter-spacing:-2px;}
+.detail-title{font-size:22px;font-weight:700;color:var(--navy);margin-bottom:5px;transition:color .3s;}
+.detail-context{font-size:13px;color:var(--muted);margin-bottom:36px;}
+.detail-divider{border:none;border-top:1px solid var(--border);margin:28px 0;}
+.detail-section-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:14px;}
+.detail-body{font-size:14px;color:var(--text);line-height:1.8;margin-bottom:22px;}
+.step-list{display:flex;flex-direction:column;margin-bottom:22px;}
+.step{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--border);}
+.step:last-child{border-bottom:none;}
+.step-num{min-width:28px;height:28px;background:var(--blue-light);color:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;margin-top:1px;flex-shrink:0;border:1px solid var(--blue-mid);}
+.step-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:3px;transition:color .3s;}
+.step-desc{font-size:12px;color:var(--muted);line-height:1.6;}
+.outcome-box{background:var(--blue-light);border-radius:12px;padding:20px 24px;border:1px solid var(--blue-mid);}
+.outcome-text{font-size:14px;color:var(--navy);line-height:1.65;transition:color .3s;}
+.tools-row{display:flex;flex-wrap:wrap;gap:7px;margin-top:6px;}
+footer{text-align:center;padding:28px;border-top:1px solid var(--border);font-size:12px;color:var(--muted);transition:border-color .4s;}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease;}
+.reveal.visible{opacity:1;transform:none;}
+/* RESUME MODAL */
+.resume-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:500;align-items:center;justify-content:center;padding:20px;}
+.resume-overlay.open{display:flex;}
+.resume-modal{background:#fff;border-radius:16px;width:100%;max-width:780px;max-height:90vh;overflow-y:auto;padding:48px 52px;position:relative;font-family:'Inter',sans-serif;color:#111827;}
+.resume-close{position:absolute;top:16px;right:20px;background:none;border:none;font-size:20px;cursor:pointer;color:#6b7280;}
+.resume-close:hover{color:#111827;}
+.resume-print{position:absolute;top:16px;right:52px;background:#2563eb;color:#fff;border:none;border-radius:6px;padding:6px 14px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;}
+.resume-print:hover{background:#1a2744;}
+.r-name{font-size:24px;font-weight:700;color:#1a2744;margin-bottom:4px;}
+.r-contact{font-size:12px;color:#6b7280;margin-bottom:20px;line-height:1.6;}
+.r-contact a{color:#2563eb;text-decoration:none;}
+.r-divider{border:none;border-top:2px solid #1a2744;margin:16px 0;}
+.r-section{margin-bottom:20px;}
+.r-section-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#1a2744;border-bottom:1px solid #e5e7eb;padding-bottom:4px;margin-bottom:12px;}
+.r-summary{font-size:12px;color:#374151;line-height:1.65;}
+.r-competencies{display:grid;grid-template-columns:repeat(3,1fr);gap:4px 16px;margin-top:4px;}
+.r-comp-item{font-size:11px;color:#374151;padding:2px 0;}
+.r-job{margin-bottom:16px;}
+.r-job-header{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap;}
+.r-job-title{font-size:13px;font-weight:700;color:#1a2744;}
+.r-job-date{font-size:11px;color:#6b7280;white-space:nowrap;}
+.r-job-company{font-size:12px;color:#2563eb;font-weight:600;margin-bottom:6px;}
+.r-bullets{list-style:none;padding:0;}
+.r-bullets li{font-size:12px;color:#374151;padding-left:14px;position:relative;margin-bottom:3px;line-height:1.5;}
+.r-bullets li::before{content:'•';position:absolute;left:0;color:#2563eb;}
+.r-bullets strong{font-weight:700;color:#1a2744;}
+.r-edu-item{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;flex-wrap:wrap;gap:4px;}
+.r-edu-degree{font-size:12px;font-weight:700;color:#1a2744;}
+.r-edu-date{font-size:11px;color:#6b7280;}
+.r-certs{font-size:12px;color:#374151;line-height:1.8;}
+@media print{.resume-close,.resume-print{display:none!important;}.resume-modal{max-height:none;padding:24px;border-radius:0;}}
+@media(max-width:680px){
+  .nav-links{display:none;}.hamburger{display:flex;}
+  .hero-inner{grid-template-columns:1fr;}.hero-photo-wrap{display:none;}
+  .skills-groups{grid-template-columns:1fr;}.cert-grid{grid-template-columns:repeat(2,1fr);}
+  .exp-item{grid-template-columns:1fr;}.contact-grid{grid-template-columns:1fr;}
+  .metrics-grid{grid-template-columns:repeat(2,1fr);}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand" onclick="showMain()">
+      <div class="nav-monogram">AK</div>
+      <span class="nav-logo">Achyuth Kandoori</span>
+    </div>
+    <div class="nav-links">
+      <a href="#results" data-s="results">Results</a>
+      <a href="#experience" data-s="experience">Experience</a>
+      <a href="#education" data-s="education">Education</a>
+      <a href="#skills" data-s="skills">Skills</a>
+      <a href="#deepdive" data-s="deepdive">Technical</a>
+      <a href="#contact" data-s="contact">Contact</a>
+      <button class="dark-toggle" onclick="toggleDark()" id="darkBtn">💡</button>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#results" onclick="closeMobile()">Results</a>
+  <a href="#experience" onclick="closeMobile()">Experience</a>
+  <a href="#education" onclick="closeMobile()">Education</a>
+  <a href="#skills" onclick="closeMobile()">Skills</a>
+  <a href="#deepdive" onclick="closeMobile()">Technical Notes</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- RESUME MODAL -->
+<div class="resume-overlay" id="resumeOverlay">
+  <div class="resume-modal">
+    <button class="resume-close" onclick="closeResume()">✕</button>
+    <button class="resume-print" onclick="window.print()">⎙ Print / Save PDF</button>
+    <div class="r-name">ACHYUTH KANDOORI</div>
+    <div class="r-contact">Portland, TN &nbsp;|&nbsp; Willing to Relocate &nbsp;|&nbsp; (864) 765-7651 &nbsp;|&nbsp; <a href="mailto:achyuthkandoori12@gmail.com">achyuthkandoori12@gmail.com</a> &nbsp;|&nbsp; <a href="https://www.linkedin.com/in/achyuthkandoori" target="_blank">linkedin.com/in/achyuthkandoori</a></div>
+    <hr class="r-divider">
+    <div class="r-section">
+      <div class="r-section-title">Professional Summary</div>
+      <div class="r-summary">Quality and Continuous Improvement Engineer with 3+ years in Tier-1 automotive manufacturing within the Toyota supply chain. Delivered 58% scrap reduction across 14+ injection molds, executed DOE-driven process optimization that cut weld-height variation by 27%, and recovered $25K in parts through rapid containment. ASQ Lean Six Sigma Green Belt with deep expertise in DMAIC, APQP/PPAP, IATF 16949, SPC/MSA, and 8D problem-solving. Skilled cross-functional leader experienced in Gemba-based CI, supplier quality management, and presenting data-driven results to plant leadership.</div>
+    </div>
+    <div class="r-section">
+      <div class="r-section-title">Core Competencies</div>
+      <div class="r-competencies">
+        <div class="r-comp-item">DMAIC / Kaizen / 5S / A3</div><div class="r-comp-item">APQP / PPAP / Control Plans</div><div class="r-comp-item">GD&T / CMM (PC-DMIS)</div>
+        <div class="r-comp-item">Root Cause Analysis (5-Why, 8D)</div><div class="r-comp-item">PFMEA / Corrective Action (CAPA)</div><div class="r-comp-item">Supplier Quality / GP12</div>
+        <div class="r-comp-item">SPC / MSA / Gage R&R</div><div class="r-comp-item">DOE / Process Optimization</div><div class="r-comp-item">Minitab / Power BI / Advanced Excel</div>
+        <div class="r-comp-item">OEE / Standard Work / Gemba</div><div class="r-comp-item">Injection Molding / Vibration Welding</div><div class="r-comp-item">ISO 9001 / IATF 16949 / OSHA / EHS</div>
+      </div>
+    </div>
+    <div class="r-section">
+      <div class="r-section-title">Professional Experience</div>
+      <div class="r-job">
+        <div class="r-job-header"><span class="r-job-title">Quality Engineer</span><span class="r-job-date">Aug 2025 – Present</span></div>
+        <div class="r-job-company">Kyowa America Corporation (Tier-1 Supplier to Toyota) — Portland, TN</div>
+        <ul class="r-bullets">
+          <li>Led root cause investigations and deployed countermeasures across 14+ active molds, <strong>reducing scrap from 5.0% to 2.1% (58% reduction)</strong>; sustained gains through SPC monitoring and updated work instructions.</li>
+          <li>Contained a quality escape within 24 hours by deploying sorting and 200% inspection, <strong>recovering $25,000 in parts</strong> and preventing customer line disruption.</li>
+          <li>Executed a 3-month DOE on vibration-welding parameters, <strong>cutting weld-height variation by 27%</strong> and eliminating a chronic defect mode.</li>
+          <li>Drove weekly CI reviews across production, tooling, and maintenance; embedded improvements into standard work and <strong>reduced top-3 defect recurrence by 35%</strong>.</li>
+          <li>Standardized CMM inspection templates across three shifts, <strong>reducing inspection time by 40%</strong> and establishing a unified reporting baseline.</li>
+        </ul>
+      </div>
+      <div class="r-job">
+        <div class="r-job-header"><span class="r-job-title">Supplier Quality Engineer (Contract)</span><span class="r-job-date">Jun 2025 – Aug 2025</span></div>
+        <div class="r-job-company">Yanfeng / HQS Automotive — onsite at OP Mobility, Spring Hill, TN</div>
+        <ul class="r-bullets">
+          <li>Mobilized containment on day one — segregated nonconforming grille assemblies, coordinated 200% inspection with OEM representatives, maintained delivery with zero customer disruption.</li>
+          <li>Performed 5-Why and Pareto analysis on recurring supplier defects, <strong>reducing defect rate by 22%</strong> and accelerating 8D closure by 40%.</li>
+          <li>Standardized GP12, rework, and RMA workflows; <strong>cut turnaround time by ~30%</strong> and cleared 30+ open nonconformances.</li>
+          <li>Conducted packaging and labeling audits, eliminating a recurring mislabeling issue and <strong>saving over $5,000/month</strong>.</li>
+        </ul>
+      </div>
+      <div class="r-job">
+        <div class="r-job-header"><span class="r-job-title">Process Improvement Intern</span><span class="r-job-date">Jan 2025 – May 2025</span></div>
+        <div class="r-job-company">Polytech (Manufacturing) — Greenville, SC</div>
+        <ul class="r-bullets">
+          <li>Owned a full DMAIC project delivering <strong>95%+ adherence with 30% less cycle-time variation</strong>.</li>
+          <li>Authored ERP work instructions and deployed SPC charts on two key production lines.</li>
+        </ul>
+      </div>
+      <div class="r-job">
+        <div class="r-job-header"><span class="r-job-title">Mechanical Engineer — Maintenance & Quality</span><span class="r-job-date">Jun 2022 – Jul 2023</span></div>
+        <div class="r-job-company">O'Mullane and Associates — Hyderabad, India</div>
+        <ul class="r-bullets">
+          <li>Rebuilt quality documentation to ISO 9001:2015 standards, <strong>raising audit compliance from 78% to 95%</strong>.</li>
+          <li>Launched preventive maintenance program covering 50+ equipment, reducing unplanned breakdowns by 30%.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="r-section">
+      <div class="r-section-title">Education</div>
+      <div class="r-edu-item"><span class="r-edu-degree">M.S. Mechanical Engineering — Clemson University, SC &nbsp;|&nbsp; GPA: 3.65</span><span class="r-edu-date">Aug 2023 – May 2025</span></div>
+      <div class="r-edu-item"><span class="r-edu-degree">B.Tech Mechanical Engineering — JNTU, Hyderabad, India &nbsp;|&nbsp; GPA: 3.5</span><span class="r-edu-date">Jun 2018 – May 2022</span></div>
+    </div>
+    <div class="r-section">
+      <div class="r-section-title">Certifications</div>
+      <div class="r-certs">Lean Six Sigma Green Belt — ASQ (2025) &nbsp;|&nbsp; AIAG CTSA Gold Badge (2025) &nbsp;|&nbsp; OSHA 30-Hour General Industry (2025) &nbsp;|&nbsp; GD&T (2023)</div>
+    </div>
+  </div>
+</div>
+
+<div id="main-view">
+<section class="hero">
+  <canvas class="hero-canvas" id="heroCanvas"></canvas>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-label-bg">AK</div>
+      <div class="hero-badge"><span></span> Quality Engineer · Toyota Tier-1 Supplier</div>
+      <h1>Achyuth<br><em id="typed"></em><span class="cursor"></span></h1>
+      <p class="hero-sub">Quality and process engineer with expertise in automotive manufacturing, APQP/PPAP, SPC, and supplier quality — with a track record of measurable process improvement at a Toyota Tier-1 supplier.</p>
+      <div class="hero-actions">
+        <a href="mailto:achyuthkandoori12@gmail.com" class="btn-primary" target="_blank">✉ Get in touch</a>
+        <a href="https://www.linkedin.com/in/achyuthkandoori" target="_blank" class="btn-secondary">in LinkedIn</a>
+        <button class="btn-secondary" onclick="showResume()">↓ Resume</button>
+        <div class="visa-pill"><div class="visa-dot"></div> STEM OPT · Authorized through 2028 · H-1B thereafter</div>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <img class="hero-photo" src="photo.jpg" alt="Achyuth Kandoori">
+    </div>
+  </div>
+</section>
+
+<section id="results" style="background:var(--bg);">
+  <div class="inner reveal">
+    <p class="section-eyebrow">Key results</p>
+    <div class="section-heading-wrap"><div class="section-heading-bg">Impact</div><h2>Impact by the numbers</h2></div>
+    <div class="metrics-grid">
+      <div class="metric-card" onclick="showDetail(0)"><div class="metric-accent"></div><div class="metric-number"><em class="count" data-target="58" data-suffix="%">0%</em></div><div class="metric-label">Scrap reduction across 14+ injection molds via SPC and DMAIC</div><div class="metric-cta">View case study →</div></div>
+      <div class="metric-card" onclick="showDetail(1)"><div class="metric-accent"></div><div class="metric-number">$<em class="count" data-target="25" data-suffix="K">0K</em></div><div class="metric-label">Parts recovered through rapid containment and 200% inspection</div><div class="metric-cta">View case study →</div></div>
+      <div class="metric-card" onclick="showDetail(2)"><div class="metric-accent"></div><div class="metric-number"><em class="count" data-target="27" data-suffix="%">0%</em></div><div class="metric-label">Weld-height variation reduction via DOE on vibration welding parameters</div><div class="metric-cta">View case study →</div></div>
+      <div class="metric-card" onclick="showDetail(3)"><div class="metric-accent"></div><div class="metric-number"><em class="count" data-target="40" data-suffix="%">0%</em></div><div class="metric-label">Faster CMM inspection by standardizing templates across three shifts</div><div class="metric-cta">View case study →</div></div>
+      <div class="metric-card" onclick="showDetail(4)"><div class="metric-accent"></div><div class="metric-number">p <em>&lt;0.05</em></div><div class="metric-label">Machine mean shift confirmed via 2-sample t-test, driving targeted corrective action</div><div class="metric-cta">View case study →</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" style="background:var(--white);transition:background .4s;">
+  <div class="inner reveal">
+    <p class="section-eyebrow">Experience</p>
+    <div class="section-heading-wrap"><div class="section-heading-bg">Work</div><h2>Work history</h2></div>
+    <div class="exp-list">
+      <div class="exp-item"><div class="exp-date">Aug 2025 – Present</div><div><div class="exp-title">Quality Engineer</div><div class="exp-company">Kyowa America Corporation · Portland, TN</div><ul class="exp-bullets"><li>Led root cause investigations across 14+ active molds, reducing scrap from 5.0% to 2.1% (58% reduction)</li><li>Contained a quality escape within 24 hours, recovering $25,000 in parts and preventing customer line disruption</li><li>Executed 3-month DOE on vibration-welding parameters, cutting weld-height variation by 27%</li><li>Standardized CMM inspection templates across three shifts, reducing inspection time by 40%</li></ul></div></div>
+      <div class="exp-item"><div class="exp-date">Jun 2025 – Aug 2025</div><div><div class="exp-title">Supplier Quality Engineer (Contract)</div><div class="exp-company">Yanfeng / HQS Automotive — Spring Hill, TN</div><ul class="exp-bullets"><li>Mobilized containment on day one across three production lines with zero customer disruption</li><li>Reduced defect rate by 22% and accelerated 8D closure by 40% via 5-Why and Pareto analysis</li><li>Cleared 30+ open nonconformances and cut turnaround time by ~30% through standardized GP12 workflows</li></ul></div></div>
+      <div class="exp-item"><div class="exp-date">Jan 2025 – May 2025</div><div><div class="exp-title">Process Improvement Intern</div><div class="exp-company">Polytech · Greenville, SC</div><ul class="exp-bullets"><li>Owned full DMAIC project delivering 95%+ adherence with 30% less cycle-time variation</li><li>Authored ERP work instructions and deployed SPC charts on two key production lines</li></ul></div></div>
+      <div class="exp-item"><div class="exp-date">Jun 2022 – Jul 2023</div><div><div class="exp-title">Mechanical Engineer — Maintenance & Quality</div><div class="exp-company">O'Mullane and Associates · Hyderabad, India</div><ul class="exp-bullets"><li>Rebuilt quality documentation to ISO 9001:2015 standards, raising audit compliance from 78% to 95%</li><li>Launched preventive maintenance program covering 50+ equipment, reducing breakdowns by 30%</li></ul></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="education" style="background:var(--bg);">
+  <div class="inner reveal">
+    <p class="section-eyebrow">Education</p>
+    <div class="section-heading-wrap"><div class="section-heading-bg">Study</div><h2>Academic background</h2></div>
+    <div class="exp-list">
+      <div class="exp-item"><div class="exp-date">Aug 2023 – May 2025</div><div><div class="exp-title">M.S. Mechanical Engineering</div><div class="exp-company">Clemson University · Clemson, SC</div><ul class="exp-bullets"><li>GPA 3.65 · Focus on manufacturing processes and quality systems</li><li>Coursework in design of experiments, statistical quality control, and finite element analysis</li></ul></div></div>
+      <div class="exp-item"><div class="exp-date">Jun 2018 – May 2022</div><div><div class="exp-title">B.Tech Mechanical Engineering</div><div class="exp-company">JNTU Hyderabad · India &nbsp;|&nbsp; GPA: 3.5</div><ul class="exp-bullets"><li>Foundation in manufacturing, thermodynamics, and materials science</li></ul></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" style="background:var(--white);transition:background .4s;">
+  <div class="inner reveal">
+    <p class="section-eyebrow">Skills</p>
+    <div class="section-heading-wrap"><div class="section-heading-bg">Skills</div><h2>Core competencies</h2></div>
+    <div class="skills-groups">
+      <div><div class="skill-group-label">Quality systems</div><div class="skill-tags"><span class="tag">APQP / PPAP</span><span class="tag">SPC / MSA</span><span class="tag">Gage R&R</span><span class="tag">PFMEA</span><span class="tag">Control Plans</span><span class="tag">8D</span><span class="tag">DMAIC</span><span class="tag">Kaizen / 5S</span><span class="tag">IATF 16949</span></div></div>
+      <div><div class="skill-group-label">Tools & software</div><div class="skill-tags"><span class="tag">Minitab</span><span class="tag">PC-DMIS</span><span class="tag">CMM</span><span class="tag">GD&T</span><span class="tag">DOE</span><span class="tag">Python</span><span class="tag">Power BI</span><span class="tag">Advanced Excel</span></div></div>
+      <div><div class="skill-group-label">Manufacturing</div><div class="skill-tags"><span class="tag">Injection Molding</span><span class="tag">Vibration Welding</span><span class="tag">Supplier Quality</span><span class="tag">GP12</span><span class="tag">OEE</span><span class="tag">Gemba</span><span class="tag">Standard Work</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="deepdive" style="background:var(--bg);">
+  <div class="inner reveal">
+    <p class="section-eyebrow">Technical notes</p>
+    <div class="section-heading-wrap"><div class="section-heading-bg">Notes</div><h2>Why I do it this way</h2></div>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:24px;max-width:560px;line-height:1.65;">Questions I get asked — or think about — when applying statistical methods on the production floor. Written plainly so anyone can follow the reasoning.</p>
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-meta"><div class="project-tag">Live Project · Python · Streamlit</div><div class="project-title">Door Panel SPC Dashboard</div><div class="project-desc">Interactive SPC dashboard — X-bar/R control charts, Cp/Cpk analysis, and Gauge R&R across all three AIAG methods. Deployed on Streamlit Cloud.</div></div>
+        <a href="https://akspcdashbord.streamlit.app" target="_blank" class="project-btn">View live ↗</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-meta"><div class="project-tag">SPC · MSA · Capability</div><div class="project-title">Statistical quality control — the decisions behind the methods</div><div class="project-desc">Four questions that separate engineers who run the tools from engineers who understand them.</div></div>
+        <button class="project-btn" onclick="toggleQA(this)">Read notes ↓</button>
+      </div>
+      <div class="qa-section">
+        <div class="qa-item"><button class="qa-question" onclick="toggleAns(this)">Why use R̄/d₂ to estimate sigma instead of sample standard deviation?<span class="qa-chev">▼</span></button><div class="qa-answer">Sample standard deviation captures <em>all</em> variation — including shifts and out-of-control events. R̄/d₂ estimates sigma from within-subgroup variation only, filtering out between-subgroup shifts. Using sample std dev inflates sigma, making the process look more capable than it is.<div class="qa-highlight">R̄/d₂ = process noise only · Sample std dev = everything, including problems</div></div></div>
+        <div class="qa-item"><button class="qa-question" onclick="toggleAns(this)">What is the difference between Cp and Cpk — and why does it matter?<span class="qa-chev">▼</span></button><div class="qa-answer">Cp measures whether your process spread fits the tolerance, assuming perfect centering. Cpk accounts for where the process is actually running. A great Cp with poor Cpk means you're producing off-center — potentially near a spec limit. In automotive, Cpk ≥ 1.33 is the minimum per AIAG.<div class="qa-highlight">Always report Cpk · Cp alone is incomplete and potentially misleading</div></div></div>
+        <div class="qa-item"><button class="qa-question" onclick="toggleAns(this)">Why does ANOVA give a different Gage R&R result than Average & Range?<span class="qa-chev">▼</span></button><div class="qa-answer">Average & Range is an approximation. ANOVA decomposes variation into four sources: Part, Operator, Part×Operator interaction, and Repeatability. The interaction term captures whether operators measure differently depending on which part — Average & Range ignores this. AIAG MSA 4th Edition recommends ANOVA as the preferred method.<div class="qa-highlight">ANOVA reveals operator×part interaction · Average & Range hides it</div></div></div>
+        <div class="qa-item"><button class="qa-question" onclick="toggleAns(this)">A point is out of control but within spec — is that a problem?<span class="qa-chev">▼</span></button><div class="qa-answer">Yes. Spec limits define what's acceptable. Control limits define what's statistically normal. Out of control inside spec means the part passes today — but something changed. Ignore it and the next subgroup may cross the spec limit. SPC catches drift <em>before</em> it makes bad parts.<div class="qa-highlight">Out of control = something changed · Act now, before it becomes out of spec</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications" style="background:var(--white);transition:background .4s;">
+  <div class="inner reveal">
+    <p class="section-eyebrow">Certifications</p>
+    <div class="section-heading-wrap"><div class="section-heading-bg">Certs</div><h2>Credentials</h2></div>
+    <div class="cert-grid">
+      <div class="cert-card"><div class="cert-name">Lean Six Sigma Green Belt</div><div class="cert-body">ASQ · 2025</div><span class="cert-badge badge-active">Active</span></div>
+      <div class="cert-card"><div class="cert-name">CTSA Gold Badge</div><div class="cert-body">AIAG · 2025</div><span class="cert-badge badge-active">Active</span></div>
+      <div class="cert-card"><div class="cert-name">OSHA 30-Hour</div><div class="cert-body">2025</div><span class="cert-badge badge-active">Active</span></div>
+      <div class="cert-card"><div class="cert-name">GD&T</div><div class="cert-body">2023</div><span class="cert-badge badge-active">Active</span></div>
+      <div class="cert-card"><div class="cert-name">Certified Quality Engineer</div><div class="cert-body">ASQ · CQE</div><span class="cert-badge badge-progress">In progress</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="background:var(--bg);">
+  <div class="inner reveal">
+    <p class="section-eyebrow">Contact</p>
+    <div class="section-heading-wrap"><div class="section-heading-bg">Hello</div><h2>Let's connect</h2></div>
+    <div class="contact-grid">
+      <div class="contact-card"><div class="contact-type">Email</div><div class="contact-val"><a href="mailto:achyuthkandoori12@gmail.com">achyuthkandoori12@gmail.com</a></div><button class="copy-btn" onclick="copyEmail(this)">⎘ Copy email</button></div>
+      <div class="contact-card"><div class="contact-type">LinkedIn</div><div class="contact-val"><a href="https://www.linkedin.com/in/achyuthkandoori" target="_blank">linkedin.com/in/achyuthkandoori</a></div></div>
+      <div class="contact-card"><div class="contact-type">Location</div><div class="contact-val">Portland, TN · Open to relocate</div></div>
+      <div class="contact-card"><div class="contact-type">Work authorization</div><div class="contact-val">STEM OPT · Authorized through 2028<br><span style="font-size:11px;color:var(--muted);font-weight:400;">H-1B sponsorship required thereafter</span></div></div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="nav-monogram" style="margin:0 auto 10px;width:32px;height:32px;display:flex;">AK</div>
+  Achyuth Kandoori · Quality Engineer · M.S. Mechanical Engineering, Clemson University
+</footer>
+</div>
+
+<div id="detail-view">
+  <div class="detail-inner" id="detail-content"></div>
+</div>
+
+<script>
+function showResume(){document.getElementById('resumeOverlay').classList.add('open');document.body.style.overflow='hidden';}
+function closeResume(){document.getElementById('resumeOverlay').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('resumeOverlay').addEventListener('click',function(e){if(e.target===this)closeResume();});
+
+let dark=false;
+function toggleDark(){dark=!dark;document.documentElement.classList.toggle('dark',dark);document.getElementById('darkBtn').textContent=dark?'☀️':'💡';}
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+function closeMobile(){document.getElementById('mobileMenu').classList.remove('open');}
+
+window.addEventListener('scroll',()=>{
+  const el=document.documentElement;
+  const pct=(el.scrollTop||document.body.scrollTop)/(el.scrollHeight-el.clientHeight)*100;
+  document.getElementById('progress').style.width=pct+'%';
+  const secs=['results','experience','education','skills','deepdive','certifications','contact'];
+  let cur='';
+  secs.forEach(id=>{const s=document.getElementById(id);if(s&&s.getBoundingClientRect().top<=70)cur=id;});
+  document.querySelectorAll('.nav-links a[data-s]').forEach(a=>a.classList.toggle('active',a.dataset.s===cur));
+});
+
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      e.target.querySelectorAll('.count').forEach(c=>{
+        const target=+c.dataset.target,suffix=c.dataset.suffix||'';
+        let cur=0;const step=Math.ceil(target/30);
+        const t=setInterval(()=>{cur=Math.min(cur+step,target);c.textContent=cur+suffix;if(cur>=target)clearInterval(t);},40);
+      });
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+const words=['Kandoori'];let wi=0,ci=0,typing=true;
+const tel=document.getElementById('typed');
+function type(){
+  if(typing){if(ci<words[wi].length){tel.textContent=words[wi].slice(0,++ci);setTimeout(type,80);}else{typing=false;setTimeout(type,2500);}}
+  else{if(ci>0){tel.textContent=words[wi].slice(0,--ci);setTimeout(type,45);}else{typing=true;wi=(wi+1)%words.length;setTimeout(type,400);}}
+}
+setTimeout(type,700);
+
+const canvas=document.getElementById('heroCanvas');
+const ctx=canvas.getContext('2d');let pts=[];
+function resize(){canvas.width=canvas.offsetWidth;canvas.height=canvas.offsetHeight;pts=Array.from({length:28},()=>({x:Math.random()*canvas.width,y:Math.random()*canvas.height,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4}));}
+function drawMesh(){
+  if(!canvas.offsetWidth)return;
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  const blue=dark?'96,165,250':'37,99,235';
+  pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>canvas.width)p.vx*=-1;if(p.y<0||p.y>canvas.height)p.vy*=-1;});
+  for(let i=0;i<pts.length;i++){
+    ctx.beginPath();ctx.arc(pts[i].x,pts[i].y,1.5,0,Math.PI*2);ctx.fillStyle=`rgba(${blue},0.3)`;ctx.fill();
+    for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<120){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle=`rgba(${blue},${.12*(1-d/120)})`;ctx.lineWidth=.8;ctx.stroke();}}
+  }
+  requestAnimationFrame(drawMesh);
+}
+window.addEventListener('resize',resize);resize();drawMesh();
+
+function copyEmail(btn){
+  navigator.clipboard.writeText('achyuthkandoori12@gmail.com').then(()=>{
+    const orig=btn.textContent;btn.textContent='✓ Copied!';btn.style.background='#059669';btn.style.color='#fff';btn.style.borderColor='#059669';
+    setTimeout(()=>{btn.textContent=orig;btn.style.background='';btn.style.color='';btn.style.borderColor='';},2000);
+  });
+}
+
+function toggleQA(btn){const qa=btn.closest('.project-card').querySelector('.qa-section');const open=qa.classList.toggle('open');btn.textContent=open?'Close notes ↑':'Read notes ↓';}
+function toggleAns(btn){const ans=btn.nextElementSibling;const chev=btn.querySelector('.qa-chev');const open=ans.classList.toggle('open');chev.classList.toggle('open',open);}
+
+const cases=[
+  {metric:"58%",title:"Scrap reduction via DMAIC and SPC across 14+ injection molds",context:"Quality Engineer · Kyowa America Corporation · Portland, TN · Aug 2025–Present",problem:"Injection-molded interior components were running a 5.0% internal scrap rate across 14+ active molds. Defects were inconsistent across shifts and cavities, suggesting a process control gap rather than a tooling or material issue. No formal SPC monitoring was in place.",steps:[{title:"Define and scope",desc:"Established a defect baseline using production records and incoming inspection data. Set measurable goal: reduce scrap rate below 3.0%. Identified top 3 defect types via Pareto analysis — they accounted for 72% of total scrap."},{title:"Validate the measurement system",desc:"Conducted Gage R&R study on the inspection gauges. Confirmed total Gage R&R under 15% before proceeding with data collection."},{title:"Establish SPC baselines",desc:"Collected 25 subgroups per shift across two weeks. Calculated initial Cpk — several CTQ dimensions running below 1.0. Plotted Xbar-R charts and identified out-of-control signals going undetected."},{title:"Root cause analysis",desc:"Used fishbone diagram and 5-Why analysis. Root causes: inconsistent resin drying time, cavity-to-cavity temperature variation, and operator-driven shot weight inconsistency. Pareto confirmed resin moisture and mold temperature as top two drivers."},{title:"Implement controls",desc:"Installed SPC control charts on resin dryer output and mold temperature zones. Standardized drying time with locked work instruction. Updated PFMEA and control plan with new control limits and reaction plans."},{title:"Monitor and sustain",desc:"Tracked scrap rate weekly for 90 days. Conducted follow-up audit at 90 days to confirm sustained performance."}],outcome:"Scrap rate reduced from 5.0% to 2.1% — a 58% reduction sustained over 90 days. Cpk improved above 1.33 on critical dimensions. Updated control plan incorporated into the annual PPAP resubmission.",tools:["DMAIC","SPC / Xbar-R Charts","Gage R&R / MSA","Minitab","Fishbone / 5-Why","PFMEA","Control Plan","8D"]},
+  {metric:"$25K",title:"Parts recovery through rapid containment and 200% inspection",context:"Quality Engineer · Kyowa America Corporation · Portland, TN · Aug 2025–Present",problem:"A quality escape was flagged — nonconforming parts were at risk of reaching the Toyota assembly line. The full lot was quarantined within 24 hours. The parts represented approximately $25,000 in material and production cost.",steps:[{title:"Immediate containment",desc:"Placed full lot on hold within 2 hours. Issued SCAR to supplier within 24 hours. Coordinated with warehouse to segregate suspect inventory and prevent any parts reaching the line."},{title:"Define sort criteria",desc:"Pulled engineering drawing and identified the out-of-spec feature. Worked with engineering to define accept/reject boundary including reworkable borderline parts."},{title:"200% inspection",desc:"Set up dedicated inspection station. Performed 200% inspection using calibrated go/no-go gauges and CMM spot-checks on borderline parts. Segregated into conforming, reworkable, and scrap."},{title:"Rework coordination",desc:"Submitted borderline parts for engineering disposition. Coordinated rework with supplier. Re-inspected all reworked parts before releasing to inventory."},{title:"8D and SCAR closure",desc:"Reviewed supplier 8D identifying worn tooling as root cause. Verified corrective action and closed SCAR after two clean subsequent shipments."}],outcome:"Recovered approximately $25,000 in parts through sort and rework. Customer line disruption prevented. Supplier implemented tooling PM trigger based on shot count.",tools:["SCAR / 8D","Containment Planning","CMM","Go/No-Go Gauging","200% Inspection","Engineering Disposition","Supplier Audit"]},
+  {metric:"27%",title:"Weld-height variation reduction via DOE on vibration welding parameters",context:"Quality Engineer · Kyowa America Corporation · Portland, TN · Aug 2025–Present",problem:"Vibration-welded plastic assemblies showed excessive weld-height variation (collapse depth) across production runs. Variation exceeded engineering tolerance and caused intermittent fit issues during final assembly. No structured understanding of which parameters drove the variation.",steps:[{title:"Define CTQ and baseline",desc:"Confirmed weld collapse depth as CTQ. Measured baseline Cpk — running at ~0.9, indicating marginal capability. Defect rate on weld height was causing intermittent assembly rejects."},{title:"Select DOE factors",desc:"Brainstormed with process engineering and tooling team. Selected four factors: weld amplitude, weld pressure, weld time, and hold pressure. Set high/low levels based on machine limits and material guidelines."},{title:"Design and run the experiment",desc:"Designed 2⁴ full factorial in Minitab with randomized run order (16 runs + 4 center points). Measured collapse depth at three locations per part using calibrated height gauge."},{title:"Analyze results",desc:"Main effects and interaction plots revealed weld pressure and hold time as dominant factors. Significant interaction between amplitude and hold pressure identified. Used response optimizer to find parameter combination minimizing variation while keeping mean on target."},{title:"Implement and confirm",desc:"Updated process work instruction and machine setup sheet with optimized parameters. Ran 30-piece confirmation run to verify improvement before full production release."}],outcome:"Weld-height variation reduced by 27%. Cpk improved from ~0.9 to above 1.33. Assembly fit rejects dropped to zero over the 60-day monitoring period.",tools:["DOE (2⁴ Factorial)","Minitab","Response Optimizer","ANOVA","Gage R&R","Control Plan","PFMEA","Vibration Welding","SPC"]},
+  {metric:"40%",title:"CMM inspection time reduction by standardizing templates across shifts",context:"Quality Engineer · Kyowa America Corporation · Portland, TN · Aug 2025–Present",problem:"CMM inspection was a bottleneck across three shifts. Each shift ran slightly different inspection routines — inconsistent probe paths, redundant datum re-hits, and manual report steps resulted in long cycle times and inconsistent reporting baselines.",steps:[{title:"Baseline measurement",desc:"Timed inspection programs across all three shifts and three CMM machines. Documented cycle time by segment: probe qualification, alignment, measurement sequence, and report generation."},{title:"Audit existing programs",desc:"Reviewed PC-DMIS programs for inefficiencies: redundant retract moves, repeated datum alignments, sequential measurements that could be parallelized, and manual report-save steps."},{title:"Standardize and optimize",desc:"Rewrote measurement sequences to minimize probe travel. Eliminated duplicate datum alignments where fixturing was stable. Converted manual report steps to auto-export. Created a single standard template across all three shifts."},{title:"Validate and roll out",desc:"Validated revised programs against originals using Gage R&R check to confirm no loss of accuracy. Documented changes and trained operators. Rolled out across all three CMMs."}],outcome:"CMM inspection cycle time reduced by 40% across standardized programs. Unified reporting baseline established across shifts. Quality feedback to production became faster, enabling tighter response to process drift.",tools:["PC-DMIS","CMM","Gage R&R","Standard Work","GD&T","Lean / Waste Elimination","Process Time Study"]},
+  {metric:"p < 0.05",title:"Machine mean shift confirmed via 2-sample t-test",context:"Quality Engineer · Kyowa America Corporation · Portland, TN · Aug 2025–Present",problem:"During SPC review, one injection molding machine consistently produced parts above the process mean vs. a second identical machine. Both were in spec, but the pattern was consistent. Rather than adjusting both machines on gut feel, a hypothesis test was used to determine statistically whether the difference was real.",steps:[{title:"Frame the hypothesis",desc:"H₀: no difference in means between the two machines. H₁: a statistically significant difference exists. Significance level set at α = 0.05."},{title:"Collect data",desc:"Pulled 30 consecutive measurements from each machine — same shift, same material lot, same operator. Verified both samples were from in-control periods."},{title:"Check assumptions",desc:"Ran Anderson-Darling normality test on both samples — both p > 0.05. Ran F-test to check variance equality before selecting the t-test variant."},{title:"Run the 2-sample t-test",desc:"Ran Welch's t-test (unequal variances) in Minitab. Result: t = 3.47, p = 0.001. Since p < 0.05, rejected H₀ — the difference was statistically significant, not random."},{title:"Targeted corrective action",desc:"Investigated Machine A only. Found a worn locating pin causing slight part displacement. Replaced the pin, re-validated, and confirmed both machines returned to a common centerline."}],outcome:"Confirmed statistically significant mean shift (p = 0.001). Targeted root cause to Machine A only — avoiding unnecessary changes to a stable machine. Both machines returned to a common process centerline.",tools:["2-Sample t-test","Hypothesis Testing","Minitab","F-test","Anderson-Darling Test","SPC / Control Charts","Root Cause Analysis"]}
+];
+
+function showDetail(i){
+  const c=cases[i];
+  const s=c.steps.map((x,n)=>`<div class="step"><div class="step-num">${n+1}</div><div><div class="step-title">${x.title}</div><div class="step-desc">${x.desc}</div></div></div>`).join('');
+  const t=c.tools.map(x=>`<span class="tag">${x}</span>`).join('');
+  document.getElementById('detail-content').innerHTML=`
+    <button class="back-btn" onclick="showMain()">← Back to portfolio</button>
+    <div class="detail-metric">${c.metric}</div>
+    <div class="detail-title">${c.title}</div>
+    <div class="detail-context">${c.context}</div>
+    <hr class="detail-divider">
+    <div class="detail-section-title">The problem</div>
+    <div class="detail-body">${c.problem}</div>
+    <hr class="detail-divider">
+    <div class="detail-section-title">The process</div>
+    <div class="step-list">${s}</div>
+    <hr class="detail-divider">
+    <div class="detail-section-title">Outcome</div>
+    <div class="outcome-box"><div class="outcome-text">${c.outcome}</div></div>
+    <hr class="detail-divider">
+    <div class="detail-section-title">Tools & methods used</div>
+    <div class="tools-row">${t}</div>`;
+  document.getElementById('main-view').style.display='none';
+  document.getElementById('detail-view').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function showMain(){
+  document.getElementById('detail-view').style.display='none';
+  document.getElementById('main-view').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
